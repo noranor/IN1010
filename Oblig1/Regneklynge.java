@@ -4,13 +4,16 @@ import java.util.ArrayList;
 
 class Regneklynge{
 	private int noderPerRack;
-	public ArrayList<Rack> regneklynge;
-	// private File fil;
+	public ArrayList<Rack> regneklynge = new ArrayList<Rack>();
+
 
 	public Regneklynge(int nPerRack){
-		ArrayList<Rack> regneklynge = new ArrayList<Rack>();
 		noderPerRack = nPerRack;
 		// Velger ArrayList ettersom det ikke er fastsatt begrensning på hvor lang arrayen regneklynge skal være. 
+	}
+	public void addRack(int noderPerRack){
+		Rack rack = new Rack(noderPerRack);
+		regneklynge.add(rack);
 	}
 
 /*
@@ -24,26 +27,19 @@ class Regneklynge{
 		}
 	}
 
-	public Rack finnLedigRack(){
-		// Skal finne ett ledig rack.
-		for(Rack rack : regneklynge){
-			if(rack.ledigPlass()){
-				return rack;
-				// Returnerer et rack dersom det er ledig
-			}
-		}return null;
-		// Returnerer null dersom metoden ikke finner noen ledige racks.
-	}
 */
 	public void settInnNode2(Node node){
+		// Hvis racket i regneklyngen er ledig, setter noden inn.
 		for(Rack rack : regneklynge){
 			if(rack.ledigPlass()){
 				rack.settInnNode1(node);
-			}else{ // Exception e{...}
-				Rack rack2 = new Rack(noderPerRack);
-				rack2.settInnNode1(node);
+				return; 
+				// Fikk adda node. program slutter.
 			}
 		}
+		addRack(noderPerRack);
+		regneklynge.get(regneklynge.size() - 1).settInnNode1(node);
+		// TODO: Få tak i siste element og legg til der.
 	}
 
 		
@@ -55,10 +51,10 @@ class Regneklynge{
 		return pros;
 	}
 
-	public int noderMedNokMinne(int paakrevdMinne){
+	public int noderMedNokMinne2(int paakrevdMinne){
 		int nokMinne = 0;
 		for(Rack rack : regneklynge){
-			nokMinne = nokMinne + rack.noderMedNokMinne(paakrevdMinne);
+			nokMinne = nokMinne + rack.noderMedNokMinne1(paakrevdMinne);
 		}
 		return nokMinne;
 	}

@@ -43,7 +43,7 @@ class Rack{
 
 	public int prosessorerPerRack(){
 		int pros = 0;
-		for(Node node : rackListe){
+				for(Node node : rackListe){
 			pros = pros + node.antallProsessorer();
 							//.antallProsessorer() er fra class Node.
 		}
@@ -51,10 +51,10 @@ class Rack{
 		// Teller antall prosessorer som finnes i alle nodene som befinner seg i racket.
 	}
 
-	public int noderMedNokMinne(int paakrevdMinne){
+	public int noderMedNokMinne1(int paakrevdMinne){
 		int memory = 0;
 		for(Node node : rackListe){
-			if(node.nokMinne(paakrevdMinne)){
+			if(node.nokMinne(paakrevdMinne) == true){
 					// .nokMinne() er fra class Node.
 				memory ++;
 			}
