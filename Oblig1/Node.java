@@ -1,37 +1,26 @@
+/* Oblig 1, IN1010 v-19, Nora Skjelstad */
+
 class Node{
+	// Initierer variabler
 	private int prosessor;
 	private int minne;
-	private static int alleNoder;
-	// Velger en static variabel for at den skal kunne telle absolutt alle noder - uavhengig av hvor mange racks som opprettes.
 
-	// private static int alleProsessorer;
-
+	/* Klassens konstruktør. Setter variablene ovenfor til 
+	variablene konstruktøren mottar. */
 	public Node(int minnet, int prosessoren){
 		minne = minnet;
 		prosessor = prosessoren;
-		alleNoder ++;
-		/* Klassens konstruktør
-
-			Initierer minnet og antall prosessorer Noden skal ha, samt øker det totale antallet noder som har blitt produsert med static variabelen alleNoder.
-		*/
-
-		//alleProsessorer = alleProsessorer + prosessoren;
 	}
 
+	// Returnerer antall prosessorer per node.
 	public int antallProsessorer(){
 		return prosessor;
-		// Returnerer antall prosessorer per Node.
 	}
 
-	public int hentAlleNoder(){
-		return alleNoder;
-		// Returnerer en static variabel i class Node. Se kommentaren øverst.
-	}
-
+	/* Returnerer true dersom minnet oppfyller minstekravet 
+	for påkrevd mine. False hvis ikke. */
 	public boolean nokMinne(int paakrevdMinne){
 		return(minne >= paakrevdMinne);
-		// Returnerer true dersom minnet oppfyller minstekravet for påkrevd mine. False hvis ikke.
 	}
 
 }
-

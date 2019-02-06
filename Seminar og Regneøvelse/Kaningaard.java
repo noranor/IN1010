@@ -1,4 +1,4 @@
-class Kaningaard{
+/*class Kaningaard{
 	private Kanin[] kaniner = new Kanin[100];
 
 	public boolean full(){
@@ -58,3 +58,4 @@ class Kaningaard{
 	}
 
 }
+*/
