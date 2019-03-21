@@ -1,0 +1,5 @@
+// Regneøvelse - Polymorf
+
+class Person{
+	
+}

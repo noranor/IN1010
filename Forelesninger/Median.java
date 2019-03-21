@@ -21,7 +21,7 @@ class Median{
 			fil = new Scanner(new File("tall.data")); // Tar inn filen som parameter i Scanner
 		} catch (Exception e){ // Hvis en feil skjer - e = generell kommando
 			System.exit(1); // Avslutter hele kjøringen
-			system.out.println("Finner ikke tall.data")
+			system.out.println("Finner ikke tall.data");
 		}
 		for (int i = 0; i < 3; i++){ 
 			data[i] = fil.nextInt(); 
